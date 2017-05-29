@@ -1,37 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Articles listiiiiiiiiiiiiiiiiiiiiiiiiiiing</h1>
+    <h1>Bienvenue sur mon blog </h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Title</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                <td>{{ article.content }}</td>
-                <td>{{ article.title }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% for article in articles %}
+    <div class="well">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.content }}
+        </p>
+      <a href="  {{ path('article_show', { 'id': article.id }) }}"> Voir </a>
+    </div>
+      {% endfor %}
 
     <ul>
         <li>
