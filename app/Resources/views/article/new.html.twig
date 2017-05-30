@@ -6,15 +6,18 @@
 
 
 <div class="alert alert-info">
-  <h1>Creer un article</h1>
+  <h1>Creer un article/brouillon</h1>
 
 </div>
 
     <div class="well">
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Creer" />
+        <input  type="submit" value="Creer un article" />
     {{ form_end(form) }}
+
+    <input type="submit" value="Creer un brouillon" />
+
 
             <a href="{{ path('article_index') }}">  <input type="submit" value="Retour" /></a>
 
