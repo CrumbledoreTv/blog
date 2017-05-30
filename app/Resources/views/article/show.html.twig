@@ -1,36 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Article</h1>
+<div class="container">
+  <div class="well col-md-12">
+    <h2>{{ article.title }}</h2>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ article.content }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ article.title }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <p>{{ article.content }}
+    </p>
 
     <ul>
-        <li>
-            <a href="{{ path('article_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('article_edit', { 'id': article.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+  <li>
+    <a href="{{ path('article_index') }}">Retour aux articles </a>
+  </li>
+
+  <li>
+    <a href="{{ path('article_edit', { 'id': article.id }) }}"> Modifier</a>
+  </li>
+</ul>
+
+    {{ form_start(delete_form) }}
+
+    <input type="submit" value="Supprimer">
+    {{ form_end(delete_form) }}
+
+</div>
+</div>
+
+
+
 {% endblock %}
