@@ -2,22 +2,28 @@
 
 {% block body %}
 <div class="container">
+  <div class="row">
 
-    <h1>Bienvenue sur mon blog </h1>
+    <h1 class="col-md-12"> Articles en ligne </h1>
+
+    <div class="ArticleBrouillon">
+    <a href="{{ path('article_new') }}"><input type="button" value="Creer un article"></a>
+    <a href="#"> <input type="button" value="Mes brouillons"> </a>
+  </div>
+
 
     {% for article in articles %}
     <div class="well col-md-12">
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.content }}
+      <a href="{{ path('article_edit', { 'id': article.id }) }}"><input type="button" value="Modifier"></a>
+        <h2 class="col-md-12">{{ article.title }}</h2>
+        <p class="col-md-12">{{ article.content }}
         </p>
-      <a href="  {{ path('article_show', { 'id': article.id }) }}"> Voir </a>
+      <a class="col-md-12" href="  {{ path('article_show', { 'id': article.id }) }}"> Voir </a>
     </div>
       {% endfor %}
 
-    <ul>
-        <li>
-            <a href="{{ path('article_new') }}">Creer un nouvel article</a>
-        </li>
-    </ul>
-</div>
+
+    </div><!--Row-->
+
+</div><!--Container -->
 {% endblock %}
