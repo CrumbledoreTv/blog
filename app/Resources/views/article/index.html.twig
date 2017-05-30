@@ -4,12 +4,16 @@
 <div class="container">
   <div class="row">
 
-    <h1 class="col-md-12"> Articles en ligne </h1>
+    <div class="alert alert-info col-md-12">
+    <h1> Articles en ligne </h1>
 
     <div class="ArticleBrouillon">
     <a href="{{ path('article_new') }}"><input type="button" value="Creer un article"></a>
     <a href="#"> <input type="button" value="Mes brouillons"> </a>
-  </div>
+  </div> <!--ArticleBrouillon -->
+
+</div> <!-- alert-info -->
+
 
 
     {% for article in articles %}

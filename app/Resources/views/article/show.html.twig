@@ -2,27 +2,26 @@
 
 {% block body %}
 <div class="container">
+<div class="row">
+
   <div class="well col-md-12">
     <h2>{{ article.title }}</h2>
 
     <p>{{ article.content }}
     </p>
 
-    <ul>
-  <li>
-    <a href="{{ path('article_index') }}">Retour aux articles </a>
-  </li>
+    <a class="col-md-12" href="{{ path('article_index') }}"><input type="submit" value="Retour"> </a>
 
-  <li>
-    <a href="{{ path('article_edit', { 'id': article.id }) }}"> Modifier</a>
-  </li>
-</ul>
+    <a class="col-md-12" href="{{ path('article_edit', { 'id': article.id }) }}"> <input type="submit" value="Modifier"></a>
+
 
     {{ form_start(delete_form) }}
     <input type="submit" value="Supprimer">
     {{ form_end(delete_form) }}
 
 </div>
+</div>
+
 </div>
 
 

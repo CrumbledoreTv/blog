@@ -1,21 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
+  <div class="container">
+    <div class="row">
 
-    <h1>Modifier un Article</h1>
+      <div class="alert alert-info">
+        <h1>Modifier un Article</h1>
+      </div>
 
-    <div class="well">
+      <div class="well">
 
-    {{ form_start(edit_form) }}
+        {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Valider" />
-    {{ form_end(edit_form) }}
+        <input type="submit" value="Valider"/>
+        {{ form_end(edit_form) }}
 
-            <a href="{{ path('article_index') }}"><input type="button" value="Retour"></a>
-          </div>
-        </div>
+        <a href="{{ path('article_index') }}"><input type="button" value="Retour"></a>
+      </div>
 
 
+    </div><!--row-->
+  </div><!--container-->
 
 {% endblock %}
