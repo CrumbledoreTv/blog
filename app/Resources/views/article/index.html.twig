@@ -1,41 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Articles listiiiiiiiiiiiiiiiiiiiiiiiiiiing</h1>
+<div class="container">
+  <div class="row">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Title</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                <td>{{ article.content }}</td>
-                <td>{{ article.title }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="alert alert-info col-md-12">
+    <h1> Articles en ligne </h1>
 
-    <ul>
-        <li>
-            <a href="{{ path('article_new') }}">Create a new article</a>
-        </li>
-    </ul>
+    <div class="ArticleBrouillon">
+    <a href="{{ path('article_new') }}"><input type="button" value="Creer un article/brouillon"></a>
+    <a href="#"> <input type="button" value="Mes brouillons"> </a>
+  </div> <!--ArticleBrouillon -->
+
+</div> <!-- alert-info -->
+
+    {% for article in articles %}
+    <div class="well col-md-12 article">
+      <a href="{{ path('article_edit', { 'id': article.id }) }}"><input type="button" value="Modifier"></a>
+      <input type="button" value="Supprimer">
+
+
+        <h2 class="col-md-12">{{ article.title }}</h2>
+        <p class="col-md-12">{{ article.content }}
+        </p>
+    </div>
+      {% endfor %}
+
+
+    </div><!--Row-->
+
+</div><!--Container -->
 {% endblock %}

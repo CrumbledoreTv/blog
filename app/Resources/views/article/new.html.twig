@@ -1,16 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Article creation</h1>
+<div class="container">
+  <div class="row">
 
+
+<div class="alert alert-info">
+  <h1>Creer un article/brouillon</h1>
+
+</div>
+
+    <div class="well">
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input  type="submit" value="Creer un article" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('article_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <input type="submit" value="Creer un brouillon" />
+
+
+            <a href="{{ path('article_index') }}">  <input type="submit" value="Retour" /></a>
+
+        </div><!--well -->
+      </div> <!--row-->
+
+    </div> <!--container -->
 {% endblock %}
