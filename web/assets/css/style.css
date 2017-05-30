@@ -20,8 +20,11 @@ h1 {
   margin-top: 2%;
 }
 
-.well input {
-  float: right;
+.well input{
   color: black;
+}
+
+.article input {
+  float: right;
 }
 /*Modifier/supprimer*/

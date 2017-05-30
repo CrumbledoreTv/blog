@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container">
+
     <h1>Modifier un Article</h1>
+
+    <div class="well">
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -9,5 +13,9 @@
     {{ form_end(edit_form) }}
 
             <a href="{{ path('article_index') }}"><input type="button" value="Retour"></a>
+          </div>
+        </div>
+
+
 
 {% endblock %}

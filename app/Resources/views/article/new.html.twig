@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container">
+
     <h1>Creer un article</h1>
 
+    <div class="well">
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Creer" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('article_index') }}">Retour</a>
-        </li>
-    </ul>
+            <a href="{{ path('article_index') }}">  <input type="submit" value="Retour" /></a>
+
+        </div><!--well -->
+      </div>
 {% endblock %}
