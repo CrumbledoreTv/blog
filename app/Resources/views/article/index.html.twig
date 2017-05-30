@@ -19,6 +19,7 @@
     {% for article in articles %}
     <div class="well col-md-12 article">
       <a href="{{ path('article_edit', { 'id': article.id }) }}"><input type="button" value="Modifier"></a>
+
         <h2 class="col-md-12">{{ article.title }}</h2>
         <p class="col-md-12">{{ article.content }}
         </p>
